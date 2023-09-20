@@ -10,12 +10,15 @@ uint8_t temprature_sens_read();
 #endif
 uint8_t temprature_sens_read();
 
+const char* ssid = "IoT";
+const char* password = "1t3s0IoT23";
+
 void setup() {
   Serial.begin(9600);
   WiFi.disconnect();
   delay(3000);
   Serial.println("Iniciando");
-  WiFi.begin("INFINITUM699D_2.4","m5fBNSCC26");
+  WiFi.begin(ssid, password);
   while ((!(WiFi.status() == WL_CONNECTED))){
     Serial.print("......");
     delay(300);
